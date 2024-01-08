@@ -1,6 +1,6 @@
 # ccastplayer
 
-This is a simple CLI tool for streaming video file to Chromecast device. 
+This is a simple CLI tool for streaming video file to Chromecast device.
 It is implemented in Python and requires [PyChromecast](https://github.com/home-assistant-libs/pychromecast)
 library for communicating with the Chromecast device.
 
@@ -22,14 +22,19 @@ Subtitles can be supplied using a separate VTT file.
 By default the first Chromecast device discovered on the local
 network is used.
 
-Example usage:
+Example usage with a local video file:
 ```
 ccastplayer.py myvideo.mp4
 ```
 
-Example usage with subtitles:
+Example usage with a local video and subtitles file:
 ```
 ccastplayer.py myvideo.mp4 --subs mysubs.vtt
+```
+
+Example usage with a remote video file:
+```
+ccastplayer.py http://example.org/videos/myvideo.mp4
 ```
 
 More help on command line options:
