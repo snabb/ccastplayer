@@ -37,6 +37,12 @@ Example usage with a remote video file:
 ccastplayer.py http://example.org/videos/myvideo.mp4
 ```
 
+If the script is unable to auto-discover the device in your local network,
+you can supply the IP address with the `--chromecast-ip` option:
+```
+ccastplayer --chromecast-ip 192.0.2.123 example.mkv
+```
+
 More help on command line options:
 ```
 ccastplayer.py --help
