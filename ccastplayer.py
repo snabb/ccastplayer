@@ -239,7 +239,7 @@ def play_video(
     video_mimetype,
     subs_url=None,
     subs_mimetype=None,
-    wait_timeout=5,
+    wait_timeout=10,
     idle_timeout=10,
 ):  # pylint: disable=too-many-arguments
     """Play video on cast device and display status in terminal."""
@@ -342,9 +342,9 @@ def handle_args():
     )
     parser.add_argument(
         "--wait-timeout",
-        help="Cast device wait timeout seconds (default: 5)",
+        help="Cast device wait timeout seconds (default: 10)",
         type=int,
-        default=5,
+        default=10,
     )
     parser.add_argument(
         "--local-ip",
