@@ -198,7 +198,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
 
         while remaining > 0:
             buf = rfile.read(min(remaining, bufsize))
-            if buf == "":
+            if buf == b"":
                 # File got shorter while running?
                 break
 
