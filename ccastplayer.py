@@ -144,8 +144,9 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
                 or self.range.last > last_pos
                 or self.range.first > self.range.last
             ):  # Return 416 response code in case the range was bad:
-                self.send_error(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+                self.send_response(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
                 self.send_header("Content-Range", f"bytes */{self._file.size}")
+                self.end_headers()
                 return False
 
             self.send_response(HTTPStatus.PARTIAL_CONTENT)
