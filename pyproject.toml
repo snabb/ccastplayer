@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ccastplayer"
+version = "1.0.0"
+dependencies = ["PyChromecast"]
+requires-python = ">=3.9"
+authors = [
+  {name = "Janne Snabb"},
+]
+description = "CLI tool for streaming video file to Chromecast"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3",
+  "Environment :: Console",
+  "Topic :: Multimedia :: Video :: Display"
+]
+
+[project.urls]
+Homepage = "https://github.com/snabb/ccastplayer/"
+Repository = "https://github.com/snabb/ccastplayer.git"
+
+[project.scripts]
+ccastplayer = "ccastplayer:main"
+
+[tool.hatch.build.targets.wheel]
+sources = ["."]
+include = ["ccastplayer.py"]
