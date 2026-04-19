@@ -7,6 +7,11 @@ import ccastplayer
 
 
 class HTTPRequestHandlerTests(unittest.TestCase):
+    def test_media_status_listener_implements_load_media_failed(self):
+        listener = ccastplayer.MyMediaStatusListener()
+
+        self.assertTrue(hasattr(listener, "load_media_failed"))
+
     def make_handler(self):
         handler = ccastplayer.HTTPRequestHandler.__new__(ccastplayer.HTTPRequestHandler)
         handler.headers = {}
