@@ -22,37 +22,54 @@ Subtitles can be supplied using a separate VTT file.
 By default the first Chromecast device discovered on the local
 network is used.
 
-## Setup
+## Installation
 
-Install the dependency with:
+Install from PyPI with `pip`:
+```sh
+pip install ccastplayer
 ```
-pip install -r requirements.txt
+
+Install from PyPI with `pipx`:
+```sh
+pipx install ccastplayer
+```
+
+Install from PyPI with `uv`:
+```sh
+uv tool install ccastplayer
+```
+
+Install directly from the GitHub repository:
+```sh
+pip install "ccastplayer @ git+https://github.com/snabb/ccastplayer.git"
+pipx install git+https://github.com/snabb/ccastplayer.git
+uv tool install git+https://github.com/snabb/ccastplayer.git
 ```
 
 Example usage with a local video file:
-```
-ccastplayer.py myvideo.mp4
+```sh
+ccastplayer myvideo.mp4
 ```
 
 Example usage with a local video and subtitles file:
-```
-ccastplayer.py myvideo.mp4 --subs mysubs.vtt
+```sh
+ccastplayer myvideo.mp4 --subs mysubs.vtt
 ```
 
 Example usage with a remote video file:
-```
-ccastplayer.py http://example.org/videos/myvideo.mp4
+```sh
+ccastplayer http://example.org/videos/myvideo.mp4
 ```
 
 If the script is unable to auto-discover the device in your local network,
 you can supply the IP address with the `--chromecast-ip` option:
-```
-ccastplayer.py --chromecast-ip 192.0.2.123 example.mkv
+```sh
+ccastplayer --chromecast-ip 192.0.2.123 example.mkv
 ```
 
 More help on command line options:
-```
-ccastplayer.py --help
+```sh
+ccastplayer --help
 ```
 
 Run the test suite with:
