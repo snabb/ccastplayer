@@ -103,6 +103,8 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             with open(self._file.local_path, "rb") as rfile:
                 self.copyfile(rfile, self.wfile)
 
+        except FileNotFoundError:
+            self.send_error(HTTPStatus.NOT_FOUND, "File not found")
         except (ConnectionResetError, BrokenPipeError):
             pass
 
