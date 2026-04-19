@@ -70,6 +70,15 @@ class MyMediaStatusListener(
             end="",
         )
 
+    def load_media_failed(self, queue_item_id: int, error_code: int) -> None:
+        """Handle media load failures reported by newer pychromecast releases."""
+
+        logging.error(
+            "Media load failed for queue item %s with error code %s",
+            queue_item_id,
+            error_code,
+        )
+
 
 # Type for inventory entry of a local files that can be served:
 File = namedtuple("File", ["local_path", "size", "mimetype"])
